@@ -6,7 +6,7 @@ const b = require('b4a')
 
 const { encode, decode } = require('.')
 
-test('encodes/decodes a hypercore key as z-base32', async t => {
+test('encodes/decodes a key as z-base32', async t => {
   const core = new Hypercore(ram)
   await core.ready()
   const core2 =  new Hypercore(ram, decode(encode(core.key)))
@@ -14,10 +14,16 @@ test('encodes/decodes a hypercore key as z-base32', async t => {
   t.alike(core2.key, core.key)
 })
 
-test('decodes a hex-encoded hypercore key', async t => {
+test('decodes a hex-encoded key', async t => {
   const core = new Hypercore(ram)
   await core.ready()
   t.alike(decode(encode(core.key)), decode(b.toString(core.key, 'hex')))
+})
+
+test('decodes an unencoded key', async t => {
+  const core = new Hypercore(ram)
+  await core.ready()
+  t.alike(decode(core.key), core.key)
 })
 
 test('invalid keys', t => {
