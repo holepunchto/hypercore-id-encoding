@@ -9,7 +9,6 @@ const { encode, decode } = require('.')
 test('encodes/decodes a hypercore key as z-base32', async t => {
   const core = new Hypercore(ram)
   await core.ready()
-  console.log('core.key:', core.key)
   const core2 =  new Hypercore(ram, decode(encode(core.key)))
   await core2.ready()
   t.alike(core2.key, core.key)
