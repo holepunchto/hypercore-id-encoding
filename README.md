@@ -1,15 +1,15 @@
-# hypercore-id-encoder
+# hypercore-id-encoding
 
 Encodes Hypercore keys into z-base32 ids, and decodes both hex/z-base32 strings.
 
 ```
-npm install hypercore-id-encoder
+npm install hypercore-id-encoding
 ```
 
 ## Usage
 
 ```js
-const { encode, decode } = require('hypercore-id-encoder')
+const { encode, decode } = require('hypercore-id-encoding')
 
 const id = encode(core.key) // (z-base32 String)
 const hexEncoded = core.key.toString('hex')
