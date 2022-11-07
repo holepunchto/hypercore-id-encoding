@@ -1,7 +1,6 @@
 const test = require('brittle')
 const Hypercore = require('hypercore')
 const ram = require('random-access-memory')
-const z32 = require('z32')
 const b = require('b4a')
 
 const { encode, decode } = require('.')
@@ -9,7 +8,7 @@ const { encode, decode } = require('.')
 test('encodes/decodes a key as z-base32', async t => {
   const core = new Hypercore(ram)
   await core.ready()
-  const core2 =  new Hypercore(ram, decode(encode(core.key)))
+  const core2 = new Hypercore(ram, decode(encode(core.key)))
   await core2.ready()
   t.alike(core2.key, core.key)
 })
