@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hypercore-protocol/hypercore-id-encoding.git"
+    "url": "git+https://github.com/holepunchto/hypercore-id-encoding.git"
   },
   "keywords": [],
   "author": "",
   "bugs": {
-    "url": "https://github.com/hypercore-protocol/hypercore-id-encoding/issues"
+    "url": "https://github.com/holepunchto/hypercore-id-encoding/issues"
   },
-  "homepage": "https://github.com/hypercore-protocol/hypercore-id-encoding#readme"
+  "homepage": "https://github.com/holepunchto/hypercore-id-encoding#readme"
 }
