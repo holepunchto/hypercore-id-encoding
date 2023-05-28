@@ -15,7 +15,7 @@
     "hypercore": "^10.0.0",
     "random-access-memory": "^6.0.0"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/holepunchto/hypercore-id-encoding.git"
