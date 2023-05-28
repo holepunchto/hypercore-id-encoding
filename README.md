@@ -38,7 +38,7 @@ If `hypercoreId` is a 64-character String, it will be decoded as hex.
 
 ## License
 
-MIT
+Apache-2.0
 
 
 
