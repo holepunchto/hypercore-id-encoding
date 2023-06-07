@@ -3,7 +3,7 @@ const Hypercore = require('hypercore')
 const ram = require('random-access-memory')
 const b = require('b4a')
 
-const { encode, decode } = require('.')
+const { encode, decode, normalize } = require('.')
 
 test('encodes/decodes a key as z-base32', async t => {
   const core = new Hypercore(ram)
@@ -23,6 +23,16 @@ test('decodes an unencoded key', async t => {
   const core = new Hypercore(ram)
   await core.ready()
   t.alike(decode(core.key), core.key)
+})
+
+test('decodes an unencoded key', async t => {
+  const core = new Hypercore(ram)
+  await core.ready()
+
+  const id = encode(core.key)
+  t.is(id, normalize(core.key))
+  t.is(id, normalize(core.key.toString('hex')))
+  t.is(id, normalize(id))
 })
 
 test('invalid keys', t => {
