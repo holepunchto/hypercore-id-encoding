@@ -22,7 +22,12 @@ const decode = function (id) {
   throw new Error('Invalid Hypercore key')
 }
 
+const normalize = function (any) {
+  return encode(decode(any))
+}
+
 module.exports = {
   encode,
-  decode
+  decode,
+  normalize
 }
