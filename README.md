@@ -33,11 +33,11 @@ Encodes a 32-byte Hypercore key into a z-base32 id.
 
 Decodes an id into a Hypercore key.
 
-`hypercoreId` must be a String.
-
 If `hypercoreId` is a 52-character String, it will be decoded as z-base32.
 
 If `hypercoreId` is a 64-character String, it will be decoded as hex.
+
+If `hypercoreId` is already a Buffer and is a valid id, it will be returned as-is.
 
 #### `const id = normalize(any)`
 
