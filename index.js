@@ -26,8 +26,18 @@ const normalize = function (any) {
   return encode(decode(any))
 }
 
+const isValid = function (any) {
+  try {
+    decode(any)
+    return true
+  } catch {
+    return false
+  }
+}
+
 module.exports = {
   encode,
   decode,
-  normalize
+  normalize,
+  isValid
 }
