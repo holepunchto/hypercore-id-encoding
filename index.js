@@ -30,9 +30,9 @@ const isValid = function (any) {
   try {
     decode(any)
     return true
-  } catch {}
-
-  return false
+  } catch {
+    return false
+  }
 }
 
 module.exports = {
