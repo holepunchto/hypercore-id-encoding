@@ -43,6 +43,10 @@ If `hypercoreId` is already a Buffer and is a valid id, it will be returned as-i
 
 Decodes and encodes the input `any` to always return a z-base32 id.
 
+#### `isValid(any)`
+
+Returns a boolean indicating whether the key is a valid hypercore key (meaning that it can be decoded/normalised).
+
 ## License
 
 Apache-2.0
