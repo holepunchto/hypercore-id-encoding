@@ -1,6 +1,6 @@
 {
   "name": "hypercore-id-encoding",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Convert Hypercore keys to/from z-base32 or hex",
   "main": "index.js",
   "scripts": {
