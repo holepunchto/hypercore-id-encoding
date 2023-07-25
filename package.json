@@ -6,6 +6,9 @@
   "scripts": {
     "test": "standard && brittle test.js"
   },
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "b4a": "^1.5.3",
     "z32": "^1.0.0"
