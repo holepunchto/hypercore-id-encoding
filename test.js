@@ -73,3 +73,15 @@ test('invalid ids', t => {
     t.exception(() => decode(id))
   }
 })
+
+test('pear link is valid', async t => {
+  const link = 'pear://oeeoz3w6fjjt7bym3ndpa6hhicm8f8naxyk11z4iypeoupn6jzpo'
+  t.ok(isValid(link))
+})
+
+test('decodes a pear link', async t => {
+  const key = 'oeeoz3w6fjjt7bym3ndpa6hhicm8f8naxyk11z4iypeoupn6jzpo'
+  const decoded = z32.decode(key)
+  const result = decode('pear://' + key)
+  t.ok(b4a.equals(decoded, result))
+})
