@@ -31,7 +31,7 @@ Encodes a 32-byte Hypercore key into a z-base32 id.
 
 #### `const buf = decode(hypercoreId)`
 
-Decodes an id into a Hypercore key.
+Decodes an id or pear link into a Hypercore key.
 
 If `hypercoreId` is a 52-character String, it will be decoded as z-base32.
 

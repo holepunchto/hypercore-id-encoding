@@ -20,6 +20,7 @@ function decode (id) {
     return id
   }
   if (typeof id === 'string') {
+    if (id.startsWith('pear://')) id = id.slice(7).split('/')[0]
     if (id.length === 52) return z32.decode(id)
     if (id.length === 64) {
       const buf = b4a.from(id, 'hex')
