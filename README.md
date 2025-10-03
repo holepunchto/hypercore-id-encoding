@@ -14,7 +14,7 @@ const { encode, decode, normalize } = require('hypercore-id-encoding')
 const id = encode(core.key) // (z-base32 String)
 const hexEncoded = core.key.toString('hex')
 
-const core = new Hypercore(ram, decode(id)) 
+const core = new Hypercore(ram, decode(id))
 const core2 = new Hypercore(ram, decode(hexEncoded)) // Will also work with hex
 
 const id2 = normalize(id)
@@ -50,6 +50,3 @@ Returns a boolean indicating whether the key is a valid hypercore key (meaning t
 ## License
 
 Apache-2.0
-
-
-

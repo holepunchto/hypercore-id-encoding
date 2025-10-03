@@ -6,7 +6,7 @@ const z32 = require('z32')
 
 const { encode, decode, normalize, isValid } = require('.')
 
-test('encodes/decodes a key as z-base32', async t => {
+test('encodes/decodes a key as z-base32', async (t) => {
   const core = new Hypercore(ram)
   await core.ready()
   const core2 = new Hypercore(ram, decode(encode(core.key)))
@@ -14,19 +14,19 @@ test('encodes/decodes a key as z-base32', async t => {
   t.alike(core2.key, core.key)
 })
 
-test('decodes a hex-encoded key', async t => {
+test('decodes a hex-encoded key', async (t) => {
   const core = new Hypercore(ram)
   await core.ready()
   t.alike(decode(encode(core.key)), decode(b4a.toString(core.key, 'hex')))
 })
 
-test('decodes an unencoded key', async t => {
+test('decodes an unencoded key', async (t) => {
   const core = new Hypercore(ram)
   await core.ready()
   t.alike(decode(core.key), core.key)
 })
 
-test('decodes an unencoded key', async t => {
+test('decodes an unencoded key', async (t) => {
   const core = new Hypercore(ram)
   await core.ready()
 
@@ -36,7 +36,7 @@ test('decodes an unencoded key', async t => {
   t.is(id, normalize(id))
 })
 
-test('isValid valid keys', async t => {
+test('isValid valid keys', async (t) => {
   const core = new Hypercore(ram)
   await core.ready()
 
@@ -45,24 +45,21 @@ test('isValid valid keys', async t => {
   t.ok(isValid(encode(core.key)), 'z32 key')
 })
 
-test('isValid invalid keys', async t => {
+test('isValid invalid keys', async (t) => {
   const invalidZKey = z32.encode(b4a.alloc(31))
   t.absent(isValid(b4a.alloc(31)), 'invalid buffer key')
   t.absent(isValid('b'.repeat(63)), 'invalid hex key')
   t.absent(isValid(invalidZKey), 'invalid z32 key')
 })
 
-test('invalid keys', t => {
-  const keys = [
-    'hello world',
-    b4a.alloc(63)
-  ]
+test('invalid keys', (t) => {
+  const keys = ['hello world', b4a.alloc(63)]
   for (const key of keys) {
     t.exception(() => encode(key))
   }
 })
 
-test('invalid ids', t => {
+test('invalid ids', (t) => {
   const ids = [
     b4a.alloc(64),
     'hello world',
@@ -74,12 +71,12 @@ test('invalid ids', t => {
   }
 })
 
-test('pear link is valid', async t => {
+test('pear link is valid', async (t) => {
   const link = 'pear://oeeoz3w6fjjt7bym3ndpa6hhicm8f8naxyk11z4iypeoupn6jzpo'
   t.ok(isValid(link))
 })
 
-test('decodes a pear link', async t => {
+test('decodes a pear link', async (t) => {
   const key = 'oeeoz3w6fjjt7bym3ndpa6hhicm8f8naxyk11z4iypeoupn6jzpo'
   const decoded = z32.decode(key)
   const result = decode('pear://' + key)
