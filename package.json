@@ -4,7 +4,9 @@
   "description": "Convert Hypercore keys to/from z-base32 or hex",
   "main": "index.js",
   "scripts": {
-    "test": "standard && brittle test.js"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "test": "brittle test.js"
   },
   "files": [
     "index.js"
@@ -16,8 +18,9 @@
   "devDependencies": {
     "brittle": "^3.1.1",
     "hypercore": "^10.0.0",
-    "random-access-memory": "^6.0.0",
-    "standard": "^17.1.0"
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0",
+    "random-access-memory": "^6.0.0"
   },
   "license": "Apache-2.0",
   "repository": {
