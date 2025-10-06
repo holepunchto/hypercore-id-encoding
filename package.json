@@ -19,7 +19,7 @@
     "brittle": "^3.1.1",
     "hypercore": "^10.0.0",
     "prettier": "^3.6.2",
-    "prettier-config-holepunch": "^1.0.0",
+    "prettier-config-holepunch": "^2.0.0",
     "random-access-memory": "^6.0.0"
   },
   "license": "Apache-2.0",
