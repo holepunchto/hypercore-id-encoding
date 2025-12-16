@@ -8,13 +8,13 @@ module.exports = {
   isValid
 }
 
-function encode (key) {
+function encode(key) {
   if (!b4a.isBuffer(key)) throw new Error('Key must be a Buffer')
   if (key.byteLength !== 32) throw new Error('Key must be 32-bytes long')
   return z32.encode(key)
 }
 
-function decode (id) {
+function decode(id) {
   if (b4a.isBuffer(id)) {
     if (id.byteLength !== 32) throw new Error('ID must be 32-bytes long')
     return id
@@ -30,11 +30,11 @@ function decode (id) {
   throw new Error('Invalid Hypercore key')
 }
 
-function normalize (any) {
+function normalize(any) {
   return encode(decode(any))
 }
 
-function isValid (any) {
+function isValid(any) {
   try {
     decode(any)
     return true
